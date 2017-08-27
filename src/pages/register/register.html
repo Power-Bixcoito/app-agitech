@@ -5,56 +5,52 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar no-border-bottom>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-  <ion-toolbar>
-    <ion-segment [(ngModel)]="tipo" color="primary">
-      <ion-segment-button value="teen">
-        #Teen
-      </ion-segment-button>
-      <ion-segment-button value="responsible">
-        Responsável
-      </ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="tipo" color="primary">
+            <ion-segment-button value="teen">
+                #Teen
+            </ion-segment-button>
+            <ion-segment-button value="responsible">
+                Responsável
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-row>
-    <ion-item>
-      <ion-label color="primary" stacked>Nome</ion-label>
-      <ion-input [(ngModel)]="name" type="text"></ion-input>
-    </ion-item>
-  </ion-row>
-  <ion-row *ngIf="tipo == 'teen'">
-    <ion-item>
-      <ion-label color="primary" stacked>Usuario</ion-label>
-      <ion-input [(ngModel)]="nickname" type="text"></ion-input>
-    </ion-item>
-  </ion-row>
-  <ion-row>
-    <ion-item>
-      <ion-label color="primary" stacked>E-mail</ion-label>
-      <ion-input [(ngModel)]="mail" type="email"></ion-input>
-    </ion-item>
-  </ion-row>
-  <ion-row *ngIf="tipo == 'teen'">
-    <ion-item>
-      <ion-label color="primary" stacked>Data de Nascimento</ion-label>
-      <ion-input [(ngModel)]="birthday" type="date"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary" stacked>Gênero</ion-label>
-      <ion-select [(ngModel)]="gender">
-        <ion-option>M</ion-option>
-        <ion-option>F</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-row>
-  <ion-row>
-    <button class="subm" ion-button color="primary" (click)="registerUser()">Cadastrar Novo Usuário</button> 
-  </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-label color="primary" stacked>Nome</ion-label>
+            <ion-input [(ngModel)]="name" type="text"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="tipo == 'teen'">
+        <ion-item>
+            <ion-label color="primary" stacked>Usuario</ion-label>
+            <ion-input [(ngModel)]="nickname" type="text"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <ion-item>
+            <ion-label color="primary" stacked>E-mail</ion-label>
+            <ion-input [(ngModel)]="mail" type="email"></ion-input>
+        </ion-item>
+    </ion-row>
+    <ion-row *ngIf="tipo == 'teen'">
+        <ion-item>
+            <ion-label color="primary" stacked>Data de Nascimento</ion-label>
+            <ion-input [(ngModel)]="birthday" type="date"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" stacked>Gênero</ion-label>
+            <ion-select [(ngModel)]="gender">
+                <ion-option>M</ion-option>
+                <ion-option>F</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-row>
+    <ion-row>
+        <button class="subm" ion-button color="primary" (click)="registerUser()">Cadastrar Novo Usuário</button>
+    </ion-row>
 </ion-content>
