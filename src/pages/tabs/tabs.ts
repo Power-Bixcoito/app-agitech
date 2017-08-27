@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-
-import { HomePage } from '../home/home';
+import { get_data } from '../../utils/localStorage'
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
-  tab1Root = HomePage;
+  tab1Root = null;
   tab2Root = 'ActivityPage'
   tab3Root = 'CardPage'
 
   constructor() {
-
+    if (get_data('user').nickname)
+      this.tab1Root = 'HomeTeenPage';
+    else
+      this.tab1Root = 'HomePage';
   }
 }
