@@ -10,15 +10,18 @@ import { LoginPage } from "../pages/login/login";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RegisterPage } from "../pages/register/register";
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
+import { ActivitiesProvider } from '../providers/activities/activities';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -30,14 +33,16 @@ import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
     MyApp,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SonsProvider,
-    ResponsiblesProvider
+    ResponsiblesProvider,
+    ActivitiesProvider
   ]
 })
 export class AppModule {}

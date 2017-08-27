@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
+import { ActivitiesProvider } from "../../providers/activities/activities";
+import { get_data } from '../../utils/localStorage'
 
 /**
  * Generated class for the ActivityPage page.
@@ -15,11 +18,49 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ActivityPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tasks;
+  activities;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public responsibles: ResponsiblesProvider, public activitiesProvider: ActivitiesProvider, public alertCtrl: AlertController) {}
+
+  ionViewWillEnter() {
+    this.responsibles.getTask(1)
+    .subscribe(response => {
+      if(response != undefined) {
+        this.tasks = response.filter(e => {
+          return e.activityId !== null
+        })
+      } else {
+        this.tasks = []
+      }
+    })
+    let user = get_data('user')
+    this.responsibles.getActivity(user.id)
+    .subscribe(response => {
+      this.activities = response;
+    })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ActivityPage');
+  showPrompt() {
+    let prompt = this.alertCtrl.create({
+      title: '',
+      message: "Você deseja adicionar tarefa ou uma atividade(conjunto de tarefas)?",
+      buttons: [
+        {
+          text: 'Tarefa',
+          handler: data => {
+
+          }
+        },
+        {
+          text: 'Atividade',
+          handler: data => {
+
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
 }

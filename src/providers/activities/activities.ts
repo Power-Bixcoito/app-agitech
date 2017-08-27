@@ -4,36 +4,22 @@ import 'rxjs/add/operator/map';
 import { environment } from "../../environment/environment";
 
 /*
-  Generated class for the ResponsiblesProvider provider.
+  Generated class for the ActivitiesProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class ResponsiblesProvider {
+export class ActivitiesProvider {
 
   resourcePath;
-  
+
   constructor(public http: Http) {
-    this.resourcePath = environment.url + 'responsibles';
+    this.resourcePath = environment.url + 'activities';
   }
 
-  getTask(id){
+  getTasks(id) {
     return this.http.get(`${this.resourcePath}/${id}/tasks`)
-    .map(res => {
-      return res.json()
-    })
-  }
-
-  getActivity(id){
-    return this.http.get(`${this.resourcePath}/${id}/activities`)
-    .map(res => {
-      return res.json()
-    })
-  }
-
-  getTeens(id){
-    return this.http.get(`${this.resourcePath}/${id}/teens`)
     .map(res => {
       return res.json()
     })

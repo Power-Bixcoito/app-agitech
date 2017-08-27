@@ -12,7 +12,21 @@
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item-group>
+            <ion-item-divider color="light">Atividades</ion-item-divider>
+            <button ion-item *ngFor="let activity of activities">
+                {{ activity.title }}
+            </button>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-item-divider color="light">Tarefas</ion-item-divider>
+            <button ion-item *ngFor="let task of tasks">
+                {{ task.title }}
+            </button>
+        </ion-item-group>
+    </ion-list>
     <ion-fab right bottom>
-        <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+        <button ion-fab color="primary" (click)="showPrompt()"><ion-icon name="add"></ion-icon></button>
     </ion-fab>
 </ion-content>
