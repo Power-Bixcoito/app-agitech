@@ -18,8 +18,8 @@ export class SonsProvider {
     this.resourcePath = environment.url + 'teens';
   }
 
-  getSons (id) {
-    return this.http.get(this.resourcePath)
+  getTeen (id) {
+    return this.http.get(`${this.resourcePath}/${id}`)
            .map(res => {
               return res.json()
            })

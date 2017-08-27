@@ -14,6 +14,7 @@ import { RegisterPage } from "../pages/register/register";
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
+import { AgilitasProvider } from '../providers/agilitas/agilitas';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ActivitiesProvider } from '../providers/activities/activities';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SonsProvider,
     ResponsiblesProvider,
-    ActivitiesProvider
+    ActivitiesProvider,
+    AgilitasProvider
   ]
 })
 export class AppModule {}
