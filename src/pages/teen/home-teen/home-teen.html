@@ -10,14 +10,19 @@
     <h2>Atividades / Tarefas</h2>
     <h2>Pontos: {{user.score}}</h2>
   </ion-item>
-  <ion-card *ngFor="let task of tasks">
-    <ion-item>
-      <h2>{{task.title}}</h2>
-    </ion-item>
-  </ion-card>
-  <ion-card *ngFor="let activity of activities">
-    <ion-item>
-      <h2>{{activity.title}}</h2>
-    </ion-item>
-  </ion-card>
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">Atividades</ion-item-divider>
+      <button ion-item *ngFor="let activity of activities">
+                {{ activity.title }}
+                <p class=float-right>{{activity.qtdCompleted}} / {{activity.qtdTotal}}</p>
+            </button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider color="light">Tarefas</ion-item-divider>
+      <button ion-item *ngFor="let task of tasks">
+                {{ task.title }}
+            </button>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
