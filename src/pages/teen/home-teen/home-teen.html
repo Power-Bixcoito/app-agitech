@@ -13,14 +13,14 @@
   <ion-list>
     <ion-item-group>
       <ion-item-divider color="light">Atividades</ion-item-divider>
-      <button ion-item *ngFor="let activity of activities">
+      <button ion-item *ngFor="let activity of activities" (click)="abrirActivities(activity)">
                 {{ activity.title }}
                 <p class=float-right>{{activity.qtdCompleted}} / {{activity.qtdTotal}}</p>
             </button>
     </ion-item-group>
     <ion-item-group>
       <ion-item-divider color="light">Tarefas</ion-item-divider>
-      <button ion-item *ngFor="let task of tasks">
+      <button ion-item *ngFor="let task of tasks" (click)="abrirTarefas(task)">
                 {{ task.title }}
             </button>
     </ion-item-group>

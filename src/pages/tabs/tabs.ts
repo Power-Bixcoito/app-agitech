@@ -7,11 +7,11 @@ import { get_data } from '../../utils/localStorage'
 export class TabsPage {
   tab1Root = null;
   tab2Root = 'ActivityPage';
-  tab3Root = 'TransactionPage';
 
   constructor() {
-    if (get_data('user').nickname)
+    if (get_data('user').nickname) {
       this.tab1Root = 'HomeTeenPage';
+    }
     else
       this.tab1Root = 'HomePage';
   }
