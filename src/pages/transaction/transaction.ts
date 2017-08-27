@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, IonicPage } from 'ionic-angular';
 import { NavParams } from 'ionic-angular'; 
 
 declare var V;
 
+@IonicPage()
 @Component({
   selector: 'page-transaction',
   templateUrl: 'transaction.html'

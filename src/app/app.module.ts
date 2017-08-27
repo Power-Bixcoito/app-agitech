@@ -5,12 +5,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-<<<<<<< HEAD
 import { LoginPage } from "../pages/login/login";
 import { TransactionPage } from '../pages/transaction/transaction';
-=======
->>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SonsProvider } from '../providers/sons/sons';
@@ -24,12 +20,6 @@ declare var rechargeAmount: 100
   declarations: [
     MyApp,
     TabsPage,
-<<<<<<< HEAD
-    LoginPage,
-    RegisterPage,
-    TransactionPage
-=======
->>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
   ],
   imports: [
     BrowserModule,
@@ -41,12 +31,6 @@ declare var rechargeAmount: 100
   entryComponents: [
     MyApp,
     TabsPage,
-<<<<<<< HEAD
-    LoginPage,
-    RegisterPage,
-    TransactionPage
-=======
->>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
   ],
   providers: [
     StatusBar,
