@@ -7,6 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from "../pages/login/login";
+import { TransactionPage } from '../pages/transaction/transaction';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,13 +16,16 @@ import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
 
+declare var rechargeAmount: 100
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    TransactionPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { ActivitiesProvider } from '../providers/activities/activities';
     HomePage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    TransactionPage
   ],
   providers: [
     StatusBar,
