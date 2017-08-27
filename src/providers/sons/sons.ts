@@ -19,11 +19,11 @@ export class SonsProvider {
     this.resourcePath = environment.url + 'teens';
   }
 
-  getSons(id) {
-    return this.http.get(this.resourcePath)
-      .map(res => {
-        return res.json()
-      })
+  getTeen (id) {
+    return this.http.get(`${this.resourcePath}/${id}`)
+           .map(res => {
+              return res.json()
+           })
   }
 
   getTasks() {
