@@ -25,6 +25,13 @@ export class ActivitiesProvider {
     })
   }
 
+  getFullActivity(id) {
+    return this.http.get(`${this.resourcePath}/${id}`)
+    .map(res => {
+      return res.json()
+    })
+  }
+
   createTasks(task) {
       return this.http.post(this.resourcePath, task)
               .map(res => res.json());

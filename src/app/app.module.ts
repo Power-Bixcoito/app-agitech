@@ -15,7 +15,8 @@ import { ActivitiesProvider } from '../providers/activities/activities';
 import { AgilitasProvider } from '../providers/agilitas/agilitas';
 import { RegisterTaskPage } from '../pages/registertask/registertask';
 import { RegisterActivityPage } from "../pages/register-activity/register-activity";
-import { RegisterPage } from '../pages/register/register';
+import { DetailsTaskPage } from "../pages/details-task/details-task";
+import { RegisterPage } from "../pages/register/register";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterPage } from '../pages/register/register';
     TabsPage,
     RegisterPage,
     RegisterTaskPage,
-    RegisterActivityPage
+    RegisterActivityPage,
+    DetailsTaskPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { RegisterPage } from '../pages/register/register';
     TabsPage,
     RegisterPage,
     RegisterTaskPage,
-    RegisterActivityPage
+    RegisterActivityPage,
+    DetailsTaskPage
   ],
   providers: [
     StatusBar,
