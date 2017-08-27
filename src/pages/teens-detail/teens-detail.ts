@@ -24,6 +24,8 @@ export class TeensDetailPage {
   }
 
   ionViewDidLoad() {
+    console.log(this.navParams.data);
+    
     this.teenProvider.getTeen(this.navParams.data.id)
       .subscribe(res => {
         this.teen = res;
@@ -39,18 +41,16 @@ export class TeensDetailPage {
     this.navCtrl.push('CardsDetailPage', card)
   }
 
-  convertPoints(card, points) {
-    card = this.teen.card
-    points = this.teen.points
-    var totalValue = points * 5.0
+  convertPoints(card, point) {
+    var totalValue = point * 5.0
     var payment = {
       card: card,
-      totalValue: totalValue
+      totalValue: totalValue,
+      point: point
     } 
-    payment.card = card
-    payment.totalValue = totalValue
+    
     this.agiProvider.addValueToCard(card.proxy, totalValue)
-    this.navCtrl.push('TransactionPage', card)
+    this.navCtrl.push('TransactionPage', payment)
   }
   
 

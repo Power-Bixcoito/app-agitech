@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
 import { NavParams } from 'ionic-angular'; 
+import { TabsPage } from "../tabs/tabs";
 
 declare var V;
 
@@ -12,11 +13,18 @@ declare var V;
 
 export class TransactionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  totalValue;
+  point;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {     
+    if(navParams.data === undefined){
+      this.navCtrl.pop()
+    }
+  }
 
   ionViewDidLoad(){
-    // let subtotal = this.navParams.get('valorTotal')
-    let subtotal = this.navParams.get('payment.totalValue')
+    this.totalValue = this.navParams.data.totalValue
+    this.point = this.navParams.data.point
+    let subtotal = this.navParams.data.totalValue    
     this.onVisaCheckoutReady(subtotal)
   }
 
