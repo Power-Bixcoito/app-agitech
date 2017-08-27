@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegisterPage } from "../register/register";
 import { TabsPage } from "../tabs/tabs";
+import { store_data, remove_data } from '../../utils/localStorage'
 
 /**
  * Generated class for the LoginPage page.
@@ -22,6 +23,11 @@ export class LoginPage {
   }
   
   login() { 
+    remove_data('user')
+    let user = {
+      id: 1
+    }
+    store_data(user, 'user')
     this.navCtrl.setRoot(TabsPage)
   }
   

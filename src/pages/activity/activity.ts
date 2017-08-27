@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 import { ActivitiesProvider } from "../../providers/activities/activities";
+import { get_data } from '../../utils/localStorage'
 
 /**
  * Generated class for the ActivityPage page.
@@ -29,8 +30,8 @@ export class ActivityPage {
         return e.activityId !== null
       })
     })
-
-    this.responsibles.getActivity(1)
+    let user = get_data('user')
+    this.responsibles.getActivity(user.id)
     .subscribe(response => {
       this.activities = response;
     })

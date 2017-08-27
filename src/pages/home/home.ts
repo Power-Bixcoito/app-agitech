@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { SonsProvider } from "../../providers/sons/sons";
+import { get_data } from '../../utils/localStorage'
+import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 
 @Component({
   selector: 'page-home',
@@ -10,14 +11,15 @@ export class HomePage {
 
   children;
 
-  constructor(public navCtrl: NavController, public sons: SonsProvider) {
+  constructor(public navCtrl: NavController, public responsibleProvider: ResponsiblesProvider) {
 
   }
 
   ionViewWillEnter() {
-    this.sons.getSons()
+    let user = get_data('user')
+    this.responsibleProvider.getTeens(user.id)
     .subscribe(response => {
-      this.children = response
+      this.children = response.teens
     })
   }
 

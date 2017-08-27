@@ -32,4 +32,11 @@ export class ResponsiblesProvider {
     })
   }
 
+  getTeens(id){
+    return this.http.get(`${this.resourcePath}/${id}/teens`)
+    .map(res => {
+      return res.json()
+    })
+  }
+
 }
