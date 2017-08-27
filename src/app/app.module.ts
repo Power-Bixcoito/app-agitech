@@ -6,7 +6,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from "../pages/login/login";
 import { TransactionPage } from '../pages/transaction/transaction';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,13 +13,17 @@ import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
 import { AgilitasProvider } from '../providers/agilitas/agilitas';
-
-declare var rechargeAmount: 100
+import { RegisterTaskPage } from '../pages/registertask/registertask';
+import { RegisterActivityPage } from "../pages/register-activity/register-activity";
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
+    RegisterPage,
+    RegisterTaskPage,
+    RegisterActivityPage
   ],
   imports: [
     BrowserModule,
@@ -32,11 +35,14 @@ declare var rechargeAmount: 100
   entryComponents: [
     MyApp,
     TabsPage,
+    RegisterPage,
+    RegisterTaskPage,
+    RegisterActivityPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     SonsProvider,
     ResponsiblesProvider,
     ActivitiesProvider,
@@ -44,4 +50,4 @@ declare var rechargeAmount: 100
     AuthProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
