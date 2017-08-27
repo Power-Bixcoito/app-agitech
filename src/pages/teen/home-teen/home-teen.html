@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <h1>{{user.name}}</h1>
+    <h2>Atividades / Tarefas</h2>
+    <h2>Pontos: {{user.score}}</h2>
+  </ion-item>
+  <ion-card *ngFor="let task of tasks">
+    <ion-item>
+      <h2>{{task.title}}</h2>
+    </ion-item>
+  </ion-card>
+  <ion-card *ngFor="let activity of activities">
+    <ion-item>
+      <h2>{{activity.title}}</h2>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -4,42 +4,49 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+<<<<<<< HEAD
 import { LoginPage } from "../pages/login/login";
 import { TransactionPage } from '../pages/transaction/transaction';
+=======
+>>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { RegisterPage } from "../pages/register/register";
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
+import { AuthProvider } from '../providers/auth/auth';
 
 declare var rechargeAmount: 100
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     TabsPage,
+<<<<<<< HEAD
     LoginPage,
     RegisterPage,
     TransactionPage
+=======
+>>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     TabsPage,
+<<<<<<< HEAD
     LoginPage,
     RegisterPage,
     TransactionPage
+=======
+>>>>>>> cd46d55745cf841aa3d861c7d45d3ad226be101b
   ],
   providers: [
     StatusBar,
@@ -47,7 +54,8 @@ declare var rechargeAmount: 100
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SonsProvider,
     ResponsiblesProvider,
-    ActivitiesProvider
+    ActivitiesProvider,
+    AuthProvider
   ]
 })
 export class AppModule {}

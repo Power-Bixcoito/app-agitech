@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import {environment} from '../../environment/environment'
+import { environment } from '../../environment/environment'
+import { get_data } from '../../utils/localStorage'
 import 'rxjs/add/operator/map';
 
 /*
@@ -18,15 +19,29 @@ export class SonsProvider {
     this.resourcePath = environment.url + 'teens';
   }
 
-  getSons (id) {
+  getSons(id) {
     return this.http.get(this.resourcePath)
-           .map(res => {
-              return res.json()
-           })
+      .map(res => {
+        return res.json()
+      })
   }
 
-  addSons () {
-    
+  getTasks() {
+    return this.http.get(`${this.resourcePath}/${get_data('user').id}/tasks`)
+      .map(res => {
+        return res.json()
+      })
+  }
+
+  getActivities() {
+    return this.http.get(`${this.resourcePath}/${get_data('user').id}/activities`)
+      .map(res => {
+        return res.json()
+      })
+  }
+
+  addSons() {
+
   }
 
 }
