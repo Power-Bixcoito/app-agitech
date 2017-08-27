@@ -4,9 +4,10 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar collor="primary">
         <ion-title>{{teen?.name}}</ion-title>
     </ion-navbar>
 
@@ -15,6 +16,10 @@
 
 <ion-content padding>
     <h3 color="dark" text-center>Saldo: R$ {{saldo}}</h3>
+    <h3 color="dark" text-center>Pontos: {{teen?.points || 0}}</h3>
+    <br/>
+
+    <button ion-button round block margin-top (click)="convertPoints()">Converter Pontos</button>
     <button ion-button round block margin-top (click)="operationsCard(teen.card)">Cartão #Teen</button>
     <button ion-button color="secondary" round block margin-top>Atividades/Tarefas</button>
 </ion-content>

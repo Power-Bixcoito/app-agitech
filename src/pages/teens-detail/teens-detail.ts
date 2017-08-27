@@ -27,11 +27,12 @@ export class TeensDetailPage {
     this.teenProvider.getTeen(this.navParams.data.id)
     .subscribe(res => {
       this.teen = res;
+      console.log(this.teen)
       this.agiProvider.getCardBalance(this.teen.card.proxy)
       .subscribe(res => {
         this.saldo = res.saldo.valor        
       })
-    })
+    })    
   }
 
   operationsCard (card) {
@@ -39,6 +40,19 @@ export class TeensDetailPage {
     this.navCtrl.push('CardsDetailPage',card)
   }
 
+  convertPoints(card, points) {
+    card = this.teen.card
+    points = this.teen.points
+    var totalValue = points * 5.0
+    var payment = {
+      card: card,
+      totalValue: totalValue
+    } 
+    payment.card = card
+    payment.totalValue = totalValue
+    this.agiProvider.addValueToCard(card.proxy, totalValue)
+    this.navCtrl.push('TransactionPage', card)
+  }
   
 
 

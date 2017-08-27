@@ -1,30 +1,11 @@
-<html>
+<ion-header>
 
-<head>
-    <script type="text/javascript">
-        function onVisaCheckoutReady() {
-            V.init({
-                apikey: "50W9NP1W1UJG9JP4755G21I7e1wnzzwnePqMWIU3G5LJ3Ceus",
-                paymentRequest: {
-                    currencyCode: "BRL",
-                    subtotal: 100.00
-                }
-            });
-            V.on("payment.success", function(payment) {
-                console.log('success', JSON.stringify(payment));
-            });
-            V.on("payment.cancel", function(payment) {
-                console.log('cancel', JSON.stringify(payment));
-            });
-            V.on("payment.error", function(payment, error) {
-                console.log('error', JSON.stringify(error));
-            });
-        }
-    </script>
-</head>
+    <ion-navbar collor="primary">
+        <ion-title>Pagamento</ion-title>
+    </ion-navbar>
 
-<body>
-    <img alt="Visa Checkout" class="v-button" role="button" src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png" />
-</body>
+</ion-header>
 
-</html>
+<ion-content style="text-align:center;">
+    <img class="center" alt="Visa Checkout" class="v-button" role="button" src="https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png" />
+</ion-content>

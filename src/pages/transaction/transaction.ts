@@ -16,7 +16,7 @@ export class TransactionPage {
 
   ionViewDidLoad(){
     // let subtotal = this.navParams.get('valorTotal')
-    let subtotal = 100.10
+    let subtotal = this.navParams.get('payment.totalValue')
     this.onVisaCheckoutReady(subtotal)
   }
 

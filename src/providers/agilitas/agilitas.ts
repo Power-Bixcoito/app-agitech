@@ -61,4 +61,18 @@ export class AgilitasProvider {
     })
   }
 
+  addValueToCard (cardId,valor) {
+    let body = {
+      saldo : {
+        valor: valor
+      }
+    }
+    return this.http.put(`${environment.agilitas.url}cartoes/${cardId}/saldo`,body,{
+      headers: this.headers
+    })
+    .map(res => {
+      return res.json()
+    })
+  }
+
 }
