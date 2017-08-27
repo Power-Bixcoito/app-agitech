@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
+import { ActivitiesProvider } from "../../providers/activities/activities";
 
 /**
  * Generated class for the ActivityPage page.
@@ -15,11 +17,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ActivityPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  tasks;
+  activities;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ActivityPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public responsibles: ResponsiblesProvider, public activitiesProvider: ActivitiesProvider) {}
+
+  ionViewWillEnter() {
+    this.responsibles.getTask(1)
+    .subscribe(response => {
+      this.tasks = response.filter(e => {
+        return e.activityId !== null
+      })
+    })
+
+    this.responsibles.getActivity(1)
+    .subscribe(response => {
+      this.activities = response;
+    })
   }
 
 }

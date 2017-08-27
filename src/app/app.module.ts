@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
+import { ActivitiesProvider } from '../providers/activities/activities';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SonsProvider,
-    ResponsiblesProvider
+    ResponsiblesProvider,
+    ActivitiesProvider
   ]
 })
 export class AppModule {}
