@@ -25,4 +25,9 @@ export class ActivitiesProvider {
     })
   }
 
+  createTasks(task) {
+      return this.http.post(this.resourcePath, task)
+              .map(res => res.json());
+  }
+
 }

@@ -14,6 +14,8 @@ import { RegisterPage } from "../pages/register/register";
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
+import { RegisterTaskPage } from "../pages/registertask/registertask";
+import { RegisterActivityPage } from "../pages/register-activity/register-activity";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ActivitiesProvider } from '../providers/activities/activities';
     HomePage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    RegisterTaskPage,
+    RegisterActivityPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { ActivitiesProvider } from '../providers/activities/activities';
     HomePage,
     TabsPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    RegisterTaskPage,
+    RegisterActivityPage
   ],
   providers: [
     StatusBar,

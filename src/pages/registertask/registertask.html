@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Registro de Tarefa</ion-title>
   </ion-navbar>
 
@@ -23,7 +23,7 @@
   <ion-row>
     <ion-item>
       <ion-label color="primary" stacked>Descrição</ion-label>
-      <ion-input [(ngModel)]="descricao" type="text"></ion-input>
+      <ion-textarea [(ngModel)]="descricao" type="text"></ion-textarea>
     </ion-item>
   </ion-row>
   <ion-row>
@@ -38,5 +38,35 @@
       <ion-input [(ngModel)]="dateFinal" type="date"></ion-input>
     </ion-item>
   </ion-row>
+  <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>Recompensa</ion-label>
+        <ion-input [(ngModel)]="recomp" type="number"></ion-input>
+      </ion-item>
+    </ion-row>
+  <ion-row *ngIf="!activity.id">
+    <ion-item>
+      <p class="quest">Quem deverá cumprir essa tarefa?</p>
+    </ion-item>
+    <ion-item>
+      <ion-select [(ngModel)]="teenId">
+        <ion-option *ngFor="let teen of teens" value="{{teen.id}}">{{teen.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-row>
+  <!--br>
+    <ion-item>
 
+      <ion-checkbox [(ngModel)]="teenId" value="teen.id" name="teen.name"></ion-checkbox>
+      <ion-label>{{ teen.name }}</ion-label>
+    </ion-item>
+  </ion-row-->
+  <ion-row *ngIf="activity.id">
+    <ion-item>
+      <ion-radio (ngModel)="final"></ion-radio> <p>Versão final?</p> 
+    </ion-item>
+  </ion-row>
+  <div class="button-container">
+    <button ion-button color="azul" (click)="registerTask()">Cadastrar Tarefa</button>
+  </div>
 </ion-content>

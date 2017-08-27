@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 import { ActivitiesProvider } from "../../providers/activities/activities";
-import { get_data } from '../../utils/localStorage'
+import { get_data } from '../../utils/localStorage';
+import { RegisterTaskPage } from "../registertask/registertask";
+import { RegisterActivityPage } from "../register-activity/register-activity";
 
 /**
  * Generated class for the ActivityPage page.
@@ -18,6 +20,8 @@ import { get_data } from '../../utils/localStorage'
 })
 export class ActivityPage {
 
+  registerT:any = RegisterTaskPage;
+  registerA: any = RegisterActivityPage;
   tasks;
   activities;
 
@@ -26,9 +30,10 @@ export class ActivityPage {
   ionViewWillEnter() {
     this.responsibles.getTask(1)
     .subscribe(response => {
+      console.log(response);
       if(response != undefined) {
         this.tasks = response.filter(e => {
-          return e.activityId !== null
+          return e.activityId == null
         })
       } else {
         this.tasks = []
@@ -44,18 +49,18 @@ export class ActivityPage {
   showPrompt() {
     let prompt = this.alertCtrl.create({
       title: '',
-      message: "Você deseja adicionar tarefa ou uma atividade(conjunto de tarefas)?",
+      message: "Você deseja adicionar tarefa ou uma atividade (conjunto de tarefas)?",
       buttons: [
         {
           text: 'Tarefa',
           handler: data => {
-
+            this.navCtrl.push(this.registerT);
           }
         },
         {
           text: 'Atividade',
           handler: data => {
-
+            this.navCtrl.push(this.registerA);
           }
         }
       ]
