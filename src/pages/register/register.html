@@ -50,9 +50,11 @@
       <ion-label color="primary" stacked>Gênero</ion-label>
       <ion-select [(ngModel)]="gender">
         <ion-option>M</ion-option>
-        <ion-option>F
-          <ion-option>
+        <ion-option>F</ion-option>
       </ion-select>
     </ion-item>
+  </ion-row>
+  <ion-row>
+    <button class="subm" ion-button color="primary" (click)="registerUser()">Cadastrar Novo Usuário</button> 
   </ion-row>
 </ion-content>
