@@ -19,7 +19,8 @@ export class HomePage {
     let user = get_data('user')
     this.responsibleProvider.getTeens(user.id)
     .subscribe(response => {
-      this.children = response.teens
+      this.children = response
+      console.log(this.children);
     })
   }
 
