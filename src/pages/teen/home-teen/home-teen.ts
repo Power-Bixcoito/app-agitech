@@ -20,16 +20,38 @@ export class HomeTeenPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeTeenPage');
-    this.getTasks();
-    this.getActivities();
-  }
+    this.sons.getTasks()
+      .subscribe(response => {
+        if (response != undefined) {
+          this.tasks = response.filter(e => {
+            if (!e.activityId)
+              return e
+          })
+        } else {
+          this.tasks = []
+        }
 
-  getTasks() {
-    this.sons.getTasks().subscribe(tasks => this.tasks = tasks)
-  }
+        console.log('tasks', this.tasks)
+      })
+    this.sons.getActivities()
+      .subscribe(response => {
+        let activities = []
+        response.forEach(activity => {
+          if (activity.tasks.length) {
+            let qtdTotal = 0;
+            let qtdCompleted = 0;
+            activity.tasks.forEach(task => {
+              ++qtdTotal;
+              if (task.completed)
+                ++qtdCompleted
+            });
+            activity.qtdCompleted = qtdCompleted;
+            activity.qtdTotal = qtdTotal;
+            activities.push(activity)
+          }
+        });
 
-  getActivities() {
-    this.sons.getActivities().subscribe(activities => this.activities = activities)
+        this.activities = activities;
+      })
   }
-
 }
