@@ -1,6 +1,6 @@
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RegisterPage } from "../register/register";
 import { TabsPage } from "../tabs/tabs";
 import { store_data, remove_data } from '../../utils/localStorage'
 
@@ -17,21 +17,25 @@ import { store_data, remove_data } from '../../utils/localStorage'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  registrarPage = RegisterPage;
+  registrarPage = 'RegisterPage';
+  email;
+  password;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private auth: AuthProvider
+  ) { }
+
+  login() {
+    if(!this.email || !this.password) return;
+    let user = { email: this.email, password: this.password };
+    this.auth.login(user).subscribe((res) => {
+      if(!res) return;
+      store_data(res, 'user')
+      this.navCtrl.setRoot(TabsPage)
+    },err => alert(err.json().message))
   }
-  
-  login() { 
-    remove_data('user')
-    let user = {
-      id: 1
-    }
-    store_data(user, 'user')
-    this.navCtrl.setRoot(TabsPage)
-  }
-  
-  register() { 
+
+  register() {
     this.navCtrl.setRoot(this.registrarPage);
   }
 }
