@@ -15,11 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsTaskPage {
 
+  task
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    if(navParams.data) {
+      this.task = navParams.data;
+    } else {
+      this.navCtrl.pop()
+    }
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsTaskPage');
+  ionViewDidLoad () {
+    console.log(this.task);
+    
   }
 
 }

@@ -61,12 +61,8 @@
       <ion-label>{{ teen.name }}</ion-label>
     </ion-item>
   </ion-row-->
-  <ion-row *ngIf="activity.id">
-    <ion-item>
-      <ion-radio (ngModel)="final"></ion-radio> <p>Versão final?</p> 
-    </ion-item>
-  </ion-row>
   <div class="button-container">
     <button ion-button color="azul" (click)="registerTask()">Cadastrar Tarefa</button>
+    <button ion-button color="danger" (click)="registerTask()" *ngIf="activity.id">Finalizar Activity</button>
   </div>
 </ion-content>

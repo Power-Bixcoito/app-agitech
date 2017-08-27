@@ -23,7 +23,7 @@ import { TabsPage } from "../tabs/tabs";
 export class RegisterTaskPage {
   activity
 
-  registerActivity = RegisterActivityPage
+  registerTaskPage = RegisterTaskPage
 
   user
   titulo
@@ -40,6 +40,7 @@ export class RegisterTaskPage {
     if (navParams.data) {
       this.activity = navParams.data;
     }
+    
     //else this.activity = null
     console.log('idTask', this.activity)
   }
@@ -86,16 +87,21 @@ export class RegisterTaskPage {
         endedAt: this.dateFinal,
         reward: this.recomp,
         responsibleId:  this.user.id,
-        teenId: this.teenId,
+        teenId: this.activity.teenId,
         activityId: this.activity.id
       }
     }
       this.taskServ.createTasks(task).subscribe(res => {
         //console.log('response createTasks', res);
-        if(this.activity.id && this.final) {
-          this.navCtrl.push(this.registerActivity, this.activity)
+        if(this.activity.id && !this.final) {
+          this.navCtrl.push(this.registerTaskPage, this.activity)
         }
-        else this.navCtrl.push(TabsPage)
+        else if(this.activity.id && this.final) {
+          this.navCtrl.push(TabsPage)
+        }
+        else {
+          this.navCtrl.push(TabsPage)
+        }
       })
 
     console.log('task', task)

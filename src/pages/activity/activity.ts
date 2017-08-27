@@ -5,6 +5,7 @@ import { ActivitiesProvider } from "../../providers/activities/activities";
 import { get_data } from '../../utils/localStorage';
 import { RegisterTaskPage } from "../registertask/registertask";
 import { RegisterActivityPage } from "../register-activity/register-activity";
+import { DetailsTaskPage } from "../details-task/details-task";
 
 /**
  * Generated class for the ActivityPage page.
@@ -66,6 +67,15 @@ export class ActivityPage {
       ]
     });
     prompt.present();
+  }
+
+  abrirTarefas(task) {
+    this.navCtrl.push(DetailsTaskPage,task)
+  }
+
+  abrirActivities (activity) {
+    console.log(activity);
+    this.navCtrl.push('ActivityDetailPage', activity);
   }
 
 }

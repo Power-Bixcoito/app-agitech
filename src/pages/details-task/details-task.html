@@ -6,13 +6,31 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>detailsTask</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Tarefas</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-card>
+      <ion-card-header>
+          {{ task?.title }}
+      </ion-card-header>
+      <ion-card-content>
+          <ion-item>
+            <h3>Descrição</h3>
+            <p>{{ task?.description }}</p>
+          </ion-item>
+          <ion-item>
+              <h3>Recompensa</h3>
+              <p>{{task?.reward}}</p>
+          </ion-item>
+          <ion-item>
+              <h3>Status</h3>
+              <p>{{task?.completed}}</p>
+          </ion-item>
+      </ion-card-content>
+  </ion-card>
 </ion-content>

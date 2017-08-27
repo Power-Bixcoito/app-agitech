@@ -16,6 +16,7 @@ import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
 import { RegisterTaskPage } from "../pages/registertask/registertask";
 import { RegisterActivityPage } from "../pages/register-activity/register-activity";
+import { DetailsTaskPage } from "../pages/details-task/details-task";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterActivityPage } from "../pages/register-activity/register-activi
     LoginPage,
     RegisterPage,
     RegisterTaskPage,
-    RegisterActivityPage
+    RegisterActivityPage,
+    DetailsTaskPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { RegisterActivityPage } from "../pages/register-activity/register-activi
     LoginPage,
     RegisterPage,
     RegisterTaskPage,
-    RegisterActivityPage
+    RegisterActivityPage,
+    DetailsTaskPage
   ],
   providers: [
     StatusBar,
