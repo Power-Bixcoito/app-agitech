@@ -32,7 +32,7 @@ export class LoginPage {
       if(!res) return;
       store_data(res, 'user')
       this.navCtrl.setRoot(TabsPage)
-    },err => alert(err.json().message))
+    },err => alert(err.json().message || 'Problema ao conectar com servidor.'))
   }
 
   register() {
