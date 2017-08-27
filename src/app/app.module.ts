@@ -5,13 +5,16 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { LoginPage } from "../pages/login/login";
+import { TransactionPage } from '../pages/transaction/transaction';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
 import { AuthProvider } from '../providers/auth/auth';
+
+declare var rechargeAmount: 100
 
 @NgModule({
   declarations: [
