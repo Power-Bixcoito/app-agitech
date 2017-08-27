@@ -6,11 +6,12 @@
 
 <ion-content padding>
     <ion-card *ngFor="let child of children">
-        <ion-item>
+        <ion-item (click)="teensDetailPage(child)">
             <ion-avatar item-start>
                 <img src="assets/gravatarlogo.jpg">
             </ion-avatar>
             <h2>{{child.name}}</h2>
+            <p>Pontuação: {{child.score}}</p>
         </ion-item>
     </ion-card>
     <ion-fab right bottom>

@@ -24,4 +24,8 @@ export class HomePage {
     })
   }
 
+  teensDetailPage (child) {
+    this.navCtrl.push('TeensDetailPage',child)    
+  }
+
 }

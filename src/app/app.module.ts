@@ -1,3 +1,4 @@
+import { AuthProvider } from './../providers/auth/auth';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
@@ -11,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
-import { AuthProvider } from '../providers/auth/auth';
+import { AgilitasProvider } from '../providers/agilitas/agilitas';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AuthProvider } from '../providers/auth/auth';
     SonsProvider,
     ResponsiblesProvider,
     ActivitiesProvider,
+    AgilitasProvider,
     AuthProvider
   ]
 })
