@@ -1,0 +1,36 @@
+page-login {
+
+    .imagem {
+        width: 40%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .img-container {
+        text-align: center;
+        font-size: 1.4em;
+        color: white;
+    }
+
+    .scroll-content {
+        //background: rgb(10,200,10);
+        background: #4CAF50;
+    }
+
+    .button-md {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+
+    .item-md {
+        background: none;
+        color: #fff;
+    }
+    .button-container {
+        text-align: center;
+    }
+
+    .button-md-secondary {
+        color: #fff;
+    }
+}
