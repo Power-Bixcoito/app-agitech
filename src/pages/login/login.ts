@@ -26,7 +26,10 @@ export class LoginPage {
   ) { }
 
   login() {
-    if(!this.email || !this.password) return;
+    if(!this.email || !this.password){
+    alert("Digite o email e a senha para continuar!");
+    return;
+    }
     let user = { email: this.email, password: this.password };
     this.auth.login(user).subscribe((res) => {
       if(!res) return;
