@@ -6,15 +6,26 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>{{teen?.name}}</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>{{teen?.name}}</ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h3 color="dark" text-center>Saldo: R$ {{saldo}}</h3>
-    <button ion-button round block margin-top (click)="operationsCard(teen.card)">Cartão #Teen</button>
-    <button ion-button color="secondary" round block margin-top>Atividades/Tarefas</button>
+
+  <h2 text-center>Por <input type="text" class="input-recompensa"> Bixcoito a recompensa será de {{recompensa}}</h2>
+
+  <ion-item>
+    <ion-range min="0" max="50" [(ngModel)]="recompensa" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>50</ion-label>
+    </ion-range>
+  </ion-item>
+
+
+  <h3 color="dark" text-center>Saldo: R$ {{saldo}}</h3>
+  <button ion-button round block margin-top (click)="operationsCard(teen.card)">Cartão #Teen</button>
+  <button ion-button color="secondary" round block margin-top>Atividades/Tarefas</button>
 </ion-content>

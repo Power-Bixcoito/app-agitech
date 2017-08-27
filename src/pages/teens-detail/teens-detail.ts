@@ -16,30 +16,30 @@ import { AgilitasProvider } from "../../providers/agilitas/agilitas";
   templateUrl: 'teens-detail.html',
 })
 export class TeensDetailPage {
-
+  recompensa = 0;
   teen;
   saldo;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public teenProvider: SonsProvider,public agiProvider: AgilitasProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public teenProvider: SonsProvider, public agiProvider: AgilitasProvider) {
   }
 
-  ionViewWillEnter () {
+  ionViewDidLoad() {
     this.teenProvider.getTeen(this.navParams.data.id)
-    .subscribe(res => {
-      this.teen = res;
-      this.agiProvider.getCardBalance(this.teen.card.proxy)
       .subscribe(res => {
-        this.saldo = res.saldo.valor        
+        this.teen = res;
+        this.agiProvider.getCardBalance(this.teen.card.proxy)
+          .subscribe(res => {
+            this.saldo = res.saldo.valor
+          })
       })
-    })
   }
 
-  operationsCard (card) {
+  operationsCard(card) {
     console.log(card);
-    this.navCtrl.push('CardsDetailPage',card)
+    this.navCtrl.push('CardsDetailPage', card)
   }
 
-  
+
 
 
 

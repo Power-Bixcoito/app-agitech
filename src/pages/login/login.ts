@@ -2,7 +2,7 @@ import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from "../tabs/tabs";
-import { store_data, remove_data } from '../../utils/localStorage'
+import { store_data, remove_data, get_data } from '../../utils/localStorage'
 
 /**
  * Generated class for the LoginPage page.
@@ -25,17 +25,22 @@ export class LoginPage {
     private auth: AuthProvider
   ) { }
 
+  ionViewDidLoad() {
+    if (get_data('user'))
+      this.navCtrl.setRoot(TabsPage)
+  }
+
   login() {
-    if(!this.email || !this.password){
-    alert("Digite o email e a senha para continuar!");
-    return;
+    if (!this.email || !this.password) {
+      alert("Digite o email e a senha para continuar!");
+      return;
     }
     let user = { email: this.email, password: this.password };
     this.auth.login(user).subscribe((res) => {
-      if(!res) return;
+      if (!res) return;
       store_data(res, 'user')
       this.navCtrl.setRoot(TabsPage)
-    },err => alert(err.json().message || 'Problema ao conectar com servidor.'))
+    }, err => alert(err.json().message || 'Problema ao conectar com servidor.'))
   }
 
   register() {
