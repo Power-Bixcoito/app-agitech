@@ -15,11 +15,16 @@ export class AuthProvider {
   resourcePath;
 
   constructor(public http: Http) {
-    this.resourcePath = environment.url + 'login';
+    this.resourcePath = environment.url;
   }
 
   login(user){
-    return this.http.post(this.resourcePath, user)
+    return this.http.post(this.resourcePath + 'login', user)
+    .map(res => res.json())
+  }
+
+  register(user){
+    return this.http.post(this.resourcePath + 'register', user)
     .map(res => res.json())
   }
 
