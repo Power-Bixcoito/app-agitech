@@ -16,13 +16,11 @@ import { AgilitasProvider } from '../providers/agilitas/agilitas';
 import { RegisterTaskPage } from '../pages/registertask/registertask';
 import { RegisterActivityPage } from "../pages/register-activity/register-activity";
 import { DetailsTaskPage } from "../pages/details-task/details-task";
-import { RegisterPage } from "../pages/register/register";
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
-    RegisterPage,
     RegisterTaskPage,
     RegisterActivityPage,
     DetailsTaskPage
@@ -37,7 +35,6 @@ import { RegisterPage } from "../pages/register/register";
   entryComponents: [
     MyApp,
     TabsPage,
-    RegisterPage,
     RegisterTaskPage,
     RegisterActivityPage,
     DetailsTaskPage
