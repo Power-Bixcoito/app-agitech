@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RegisterTaskPage } from "../registertask/registertask";
 import { get_data } from "../../utils/localStorage";
 import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 import { ActivitiesProvider } from "../../providers/activities/activities";
@@ -20,8 +19,6 @@ import { ActivitiesProvider } from "../../providers/activities/activities";
 export class RegisterActivityPage {
 
   idTask
-
-  registerTask = RegisterTaskPage
 
   user
   titulo
@@ -63,7 +60,7 @@ export class RegisterActivityPage {
     };
     this.activityServ.createTasks(task).subscribe(res => {
       console.log('response createTasks', res);
-      this.navCtrl.push(this.registerTask, res)
+      this.navCtrl.push('RegisterTaskPage', res)
     })
 
   }
