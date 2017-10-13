@@ -4,7 +4,6 @@ import { SonsProvider } from "../../providers/sons/sons";
 import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 import { get_data } from "../../utils/localStorage";
 import { TasksProvider } from "../../providers/tasks/tasks";
-import { RegisterActivityPage } from "../register-activity/register-activity";
 import { TabsPage } from "../tabs/tabs";
 
 /**
@@ -22,8 +21,6 @@ import { TabsPage } from "../tabs/tabs";
 })
 export class RegisterTaskPage {
   activity
-
-  registerTaskPage = RegisterTaskPage
 
   user
   titulo
@@ -94,7 +91,7 @@ export class RegisterTaskPage {
       this.taskServ.createTasks(task).subscribe(res => {
         //console.log('response createTasks', res);
         if(this.activity.id && !this.final) {
-          this.navCtrl.push(this.registerTaskPage, this.activity)
+          this.navCtrl.push('RegisterTaskPage', this.activity)
         }
         else if(this.activity.id && this.final) {
           this.navCtrl.push(TabsPage)

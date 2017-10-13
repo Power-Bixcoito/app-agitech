@@ -6,24 +6,17 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
-import { TransactionPage } from '../pages/transaction/transaction';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SonsProvider } from '../providers/sons/sons';
 import { ResponsiblesProvider } from '../providers/responsibles/responsibles';
 import { ActivitiesProvider } from '../providers/activities/activities';
 import { AgilitasProvider } from '../providers/agilitas/agilitas';
-import { RegisterTaskPage } from '../pages/registertask/registertask';
-import { RegisterActivityPage } from "../pages/register-activity/register-activity";
-import { DetailsTaskPage } from "../pages/details-task/details-task";
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
-    RegisterTaskPage,
-    RegisterActivityPage,
-    DetailsTaskPage
   ],
   imports: [
     BrowserModule,
@@ -35,9 +28,6 @@ import { DetailsTaskPage } from "../pages/details-task/details-task";
   entryComponents: [
     MyApp,
     TabsPage,
-    RegisterTaskPage,
-    RegisterActivityPage,
-    DetailsTaskPage
   ],
   providers: [
     StatusBar,

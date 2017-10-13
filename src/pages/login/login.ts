@@ -17,7 +17,6 @@ import { store_data, remove_data, get_data } from '../../utils/localStorage'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  registrarPage = 'RegisterPage';
   email;
   password;
 
@@ -44,6 +43,6 @@ export class LoginPage {
   }
 
   register() {
-    this.navCtrl.setRoot(this.registrarPage);
+    this.navCtrl.setRoot('RegisterPage');
   }
 }

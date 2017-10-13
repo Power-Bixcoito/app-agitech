@@ -3,9 +3,6 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { ResponsiblesProvider } from "../../providers/responsibles/responsibles";
 import { ActivitiesProvider } from "../../providers/activities/activities";
 import { get_data } from '../../utils/localStorage';
-import { RegisterTaskPage } from "../registertask/registertask";
-import { RegisterActivityPage } from "../register-activity/register-activity";
-import { DetailsTaskPage } from "../details-task/details-task";
 
 /**
  * Generated class for the ActivityPage page.
@@ -21,8 +18,6 @@ import { DetailsTaskPage } from "../details-task/details-task";
 })
 export class ActivityPage {
 
-  registerT:any = RegisterTaskPage;
-  registerA: any = RegisterActivityPage;
   tasks;
   activities;
 
@@ -55,13 +50,13 @@ export class ActivityPage {
         {
           text: 'Tarefa',
           handler: data => {
-            this.navCtrl.push(this.registerT);
+            this.navCtrl.push('RegisterTaskPage');
           }
         },
         {
           text: 'Atividade',
           handler: data => {
-            this.navCtrl.push(this.registerA);
+            this.navCtrl.push('RegisterActivityPage');
           }
         }
       ]
@@ -70,7 +65,7 @@ export class ActivityPage {
   }
 
   abrirTarefas(task) {
-    this.navCtrl.push(DetailsTaskPage,task)
+    this.navCtrl.push('DetailsTaskPage',task)
   }
 
   abrirActivities (activity) {

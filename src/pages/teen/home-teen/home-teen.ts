@@ -1,4 +1,3 @@
-import { DetailsTaskPage } from './../../details-task/details-task';
 import { SonsProvider } from './../../../providers/sons/sons';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -57,7 +56,7 @@ export class HomeTeenPage {
   }
 
   abrirTarefas(task) {
-    this.navCtrl.push(DetailsTaskPage, task)
+    this.navCtrl.push('DetailsTaskPage', task)
   }
 
   abrirActivities(activity) {
